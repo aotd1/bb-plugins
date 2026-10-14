@@ -26,7 +26,8 @@ bb taskboard transitions gitea 'git.example.com/team/app#7'
 bb taskboard move gitea 'git.example.com/team/app#7' --status __closed__
 ```
 
-Lists include open and closed issues, exclude pull requests and paginate.
+Lists include open and closed issues, exclude pull requests and paginate,
+including when the server caps pages below the requested size.
 Opening an issue loads current details and comments. The reviewed creation
 form supports available assignees, labels, milestones and due dates.
 Gitea issues have no native priority or issue type; those fields stay hidden.
@@ -35,8 +36,10 @@ Open and Closed are always available. Create repository labels such as
 `status/backlog`, `status/todo`, `status/in-progress`, `status/review`,
 `status/done` and `status/canceled` to expose additional Kanban stages.
 Taskboard uses existing workflow labels; it does not create them implicitly.
-Moving stages replaces previous `status/*` labels and preserves unrelated
-labels. Done/canceled closes an issue; a nonterminal stage reopens it.
+Moving stages changes only `status/*` labels, preserving concurrent edits to
+unrelated labels. Done/canceled closes an issue; a nonterminal stage reopens it.
+An externally reopened issue is shown as Open even if it retains a terminal
+workflow label; a terminal category requires the issue to actually be closed.
 Native Open/Closed clears workflow labels to keep the displayed state consistent.
 
 Gitea updates labels and issue state through separate endpoints, so a failed

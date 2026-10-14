@@ -143,7 +143,9 @@ export function createGiteaAdapter(options: {
     await scopedSession();
     const args = ['api', '--login', options.login, '--method', method, endpoint];
     if (body !== undefined) args.push('--data', '@-');
-    return JSON.parse(await runner(args, body === undefined ? undefined : JSON.stringify(body)));
+    const response = await runner(args, body === undefined ? undefined : JSON.stringify(body));
+    // Gitea label removal succeeds with HTTP 204 and no response body.
+    return method === 'DELETE' && !response.trim() ? undefined : JSON.parse(response);
   }
 
   async function pages(endpoint: string): Promise<unknown[]> {
@@ -151,7 +153,9 @@ export function createGiteaAdapter(options: {
     for (let page = 1; page <= MAX_PAGES; page++) {
       const values = z.array(z.unknown()).parse(await api(`${endpoint}${endpoint.includes('?') ? '&' : '?'}limit=${PAGE_SIZE}&page=${page}`));
       result.push(...values);
-      if (values.length < PAGE_SIZE) return result;
+      // The server may cap pages below our requested limit. Only an empty page
+      // proves exhaustion without relying on tea to expose response headers.
+      if (values.length === 0) return result;
     }
     throw new Error('Gitea result exceeds the page limit; use a smaller repository.');
   }
@@ -168,7 +172,8 @@ export function createGiteaAdapter(options: {
   }
 
   function toItem(issue: z.infer<typeof issueSchema>, comments: ExternalWorkItemDetail['comments'] = []): ExternalWorkItemDetail {
-    const workflow = issue.labels.find(label => WORKFLOW_LABEL.test(label.name));
+    const workflow = issue.labels.find(label => WORKFLOW_LABEL.test(label.name) &&
+      ['done', 'canceled'].includes(giteaStatusCategory(label.name)) === (issue.state === 'closed'));
     const category = issue.state === 'closed'
       ? workflow && giteaStatusCategory(workflow.name) === 'canceled' ? 'canceled' : 'done'
       : workflow ? giteaStatusCategory(workflow.name) : 'todo';
@@ -214,11 +219,17 @@ export function createGiteaAdapter(options: {
     if (!target) throw new Error('Choose a current Gitea workflow status.');
     const { repository } = await scopedSession();
     const issuePath = `${repository}/issues/${issue.number}`;
-    const labelIds = issue.labels.filter(label => !WORKFLOW_LABEL.test(label.name)).map(label => label.id);
-    if (!statusId.startsWith('__')) labelIds.push(Number(statusId));
+    const targetLabelId = statusId.startsWith('__') ? null : Number(statusId);
     // Labels and state use separate Gitea endpoints. Do not pretend they are atomic.
     try {
-      await api(`${issuePath}/labels`, 'PUT', { labels: labelIds });
+      for (const label of issue.labels) {
+        if (WORKFLOW_LABEL.test(label.name) && label.id !== targetLabelId) {
+          await api(`${issuePath}/labels/${label.id}`, 'DELETE');
+        }
+      }
+      if (targetLabelId !== null) {
+        await api(`${issuePath}/labels`, 'POST', { labels: [targetLabelId] });
+      }
       await api(issuePath, 'PATCH', { state: ['done', 'canceled'].includes(target.stateCategory) ? 'closed' : 'open' });
     } catch {
       throw new Error('Gitea status change may be partial. Refresh the issue before trying again.');

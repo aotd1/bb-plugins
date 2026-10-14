@@ -1,4 +1,4 @@
-import { defineRpcContract } from '@get-bb/plugin-sdk';
+import type { PluginRpcContract } from '@get-bb/plugin-sdk';
 import { factoryRpcMethods } from './factory/contract.js';
 import { improvementRpcMethods } from './ticket-improvement.js';
 import { z } from 'zod';
@@ -355,7 +355,7 @@ const listInputSchema = z
   })
   .strict();
 
-export const taskboardRpcContract = defineRpcContract({
+export const taskboardRpcContract = {
   ...factoryRpcMethods,
   ...improvementRpcMethods,
   listProjects: {
@@ -531,7 +531,7 @@ export const taskboardRpcContract = defineRpcContract({
       })
       .strict()
   }
-});
+} as const satisfies PluginRpcContract;
 
 export type TaskboardRpcContract = typeof taskboardRpcContract;
 
