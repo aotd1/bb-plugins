@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "sequence": 10,
+  "previousDigest": "sha256:287db0848988443a51a48272d257c465ccd8aaf385acc8cd26b6c8d512732669",
+  "actor": "agent",
+  "type": "transition",
+  "summary": "Replaced the generic Gitea Ticket glyph with the official inline SVG cup logo, preserving size and aria-hidden behavior. Built all plugin bundles and reloaded installed taskboard successfully. Source and manifest behavior unchanged; unit tests not rerun for this visual-only refinement. Live UI inspection follows.",
+  "createdAt": "2026-10-14T13:40:27.175Z",
+  "stateBeforeDigest": "sha256:4de95dd2a0be1ff1b2bd57458eea087812a29a9417cb2d959f8c7ac8b5552183",
+  "stateAfterDigest": "sha256:b85108609ad2598ba4d0025f8f664815fc018db0e18ca477450d8e471e712609",
+  "state": {
+    "schemaVersion": 5,
+    "revision": 10,
+    "activeFeature": "taskboard-gitea-tea",
+    "request": "Add a Gitea tracker to Taskboard through the installed tea CLI. Support explicitly scoped tea login and owner/repo, list and live issue/comment details, issue creation with labels assignees milestones due date when available, native open/closed and status/* label Kanban transitions, CLI and UI configuration, append-only database upgrades, meaningful tests and live verification. Work in this fresh isolated checkout and user-authorized feat/taskboard-gitea-tea branch. Create a draft PR only in our GitHub fork aotd1/bb-plugins and install a separate local pilot plugin identity. Do not create upstream issues or PRs until seven days of actual pilot use have elapsed.",
+    "profile": "complex",
+    "workflow": "complex",
+    "mode": "normal",
+    "phase": "implement",
+    "status": "waiting",
+    "repairAttempts": 0,
+    "message": "Replaced the generic Gitea Ticket glyph with the official inline SVG cup logo, preserving size and aria-hidden behavior. Built all plugin bundles and reloaded installed taskboard successfully. Source and manifest behavior unchanged; unit tests not rerun for this visual-only refinement. Live UI inspection follows.",
+    "implementationActor": "agent",
+    "workStartedAt": null,
+    "specDigest": "sha256:c0d148ff671a7feb07983234473d572816de23c8268ac052245e682ac16c084e",
+    "approvedSpecRevision": 2,
+    "capabilityArchiveRequired": true,
+    "capabilityDeltaDigest": "sha256:0348161b15d8ad86c3b0b9226d62faf8e78498bff2ad8d14b3589d04ae16b133",
+    "impactDigest": "sha256:11709b86cb3cc910af4e1139991fa10b81a5c94649cf94daa638d77940d0f078",
+    "capabilityClaimId": "taskboard-gitea-tea-8aca76f11e54",
+    "authorizationDigest": null,
+    "evidence": [],
+    "evidenceReceiptIds": [],
+    "legacyEvidenceCount": 0,
+    "completion": {
+      "implemented": true,
+      "verified": false,
+      "integrated": false,
+      "delivered": false,
+      "published": false,
+      "highest": "implemented",
+      "reasons": {
+        "verified": "verified has not been proven by a durable receipt.",
+        "integrated": "integrated has not been proven by a durable receipt.",
+        "delivered": "delivered has not been proven by a durable receipt.",
+        "published": "published has not been proven by a durable receipt."
+      }
+    },
+    "updatedAt": "2026-10-14T13:40:27.175Z",
+    "capabilityBase": {
+      "schemaVersion": 1,
+      "id": "taskboard-gitea-tea-8aca76f11e54",
+      "repositoryId": "sha256:703b13956fbeb2dfe9d4cf7c34077de56a5c348c0f42f9ceef5c1cac794fbf42",
+      "feature": "taskboard-gitea-tea",
+      "worktree": "/Users/aotd/.bb/plugins/environment-personal-workspace/host-data/workspaces/thr_v29smt7xre/bb-plugins",
+      "worktreeId": "sha256:20bab37823a9540d5cb1a7b090c3be591a7a54a1c14512f959c17141477e4105",
+      "baseCommit": "a16dda0dd942d0bd1a7967329142f4209d5c9231",
+      "baseTree": "01b1f7e779c95b4cd206e9d1e0d09c48bf91a406",
+      "bases": {
+        "taskboard-gitea": {
+          "capability": "taskboard-gitea",
+          "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "requirements": {
+            "gitea through tea": null,
+            "gitea issue writes": null,
+            "additive storage and pilot boundary": null
+          }
+        }
+      },
+      "capabilities": [
+        "taskboard-gitea"
+      ],
+      "status": "active",
+      "integrationReceiptDigest": null,
+      "createdAt": "2026-10-14T12:28:23.997Z",
+      "heartbeatAt": "2026-10-14T12:28:23.997Z",
+      "digest": "sha256:ed2b50210da0e1a3b3f50b60dc547649332160d34ca5f5224554c4b5a9cb0546"
+    },
+    "sizeDecision": {
+      "choice": "keep",
+      "criteria": 8,
+      "capabilities": 1,
+      "reason": "A usable tracker source requires its schema, storage, adapter, CLI and UI to ship together; these are one independently reviewable feature.",
+      "actor": "agent",
+      "revision": 2
+    },
+    "trackerGeneration": 1,
+    "lifecycle": {
+      "stage": "iteration",
+      "iteration": 1,
+      "awaitingFeedback": true
+    },
+    "reviewFirst": true
+  },
+  "digest": "sha256:b0b5c049faba653847b2edbaf8c30c66b5f917b06685de255f414dd61ad5da1d"
+}
