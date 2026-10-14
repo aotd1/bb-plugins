@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "collected-d97bc9f81c2b28031c36d672",
+  "criteria": [
+    "AC-1",
+    "AC-2",
+    "AC-3",
+    "AC-4",
+    "AC-5",
+    "AC-6",
+    "AC-7",
+    "AC-UI-1"
+  ],
+  "evidenceKinds": [
+    "review"
+  ],
+  "summary": "fresh-context review approved the exact committed base diff",
+  "passed": true,
+  "startedAt": "2026-10-14T13:02:12.952Z",
+  "completedAt": "2026-10-14T13:02:12.952Z",
+  "provenance": {
+    "repositoryId": "sha256:703b13956fbeb2dfe9d4cf7c34077de56a5c348c0f42f9ceef5c1cac794fbf42",
+    "feature": "taskboard-gitea-tea",
+    "specRevision": 2,
+    "specDigest": "sha256:c0d148ff671a7feb07983234473d572816de23c8268ac052245e682ac16c084e",
+    "treeDigest": "sha256:db00b69d10c9d64d30ab097e08cad8cbd59519d6b7d8bb392179496960d3cef3",
+    "policyDigest": "sha256:4aedcfe7f723bdfc2b5d92de7eacf6bac553de4731715c9d0f84dc58dd5754bd"
+  },
+  "digest": "sha256:ec58eca0b1c66114298fba13fc8ad490bbbe783688c48682ba1c7a0ab53fc3a2",
+  "kind": "collected",
+  "collector": "empirical-review:isolated-gitea-reviewer-f1a0b568-e846-4be7-ab7e-337a411a1e07",
+  "artifacts": [
+    {
+      "path": ".empirical/specs/taskboard-gitea-tea/reviews/cea204414c82caa27b3adf77.json",
+      "mediaType": "application/json",
+      "bytes": 2805,
+      "digest": "sha256:a013c1560795b19de1bf697073dfe0dde6c093d290a6586d05a9e557c0ac4cad"
+    },
+    {
+      "path": ".empirical/specs/taskboard-gitea-tea/reviews/cea204414c82caa27b3adf77.md",
+      "mediaType": "text/markdown",
+      "bytes": 2003,
+      "digest": "sha256:ea048ee71d5f11118509b1e10f23ed6d733f57e30c2fa2e50a1e5ed6dd14afb5"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "criteria": [
+    {
+      "id": "AC-1",
+      "passed": true,
+      "detail": "The installed pilot reports Gitea configured and available for proj_personal. Manage visibly offers Gitea with tea-login and host/owner/repo fields. Retained passing fixtures cover explicit Gitea CLI scope, malformed repositories, foreign locators rejected before tea, login-host mismatch before authenticated requests, reverse-proxy base paths, and foreign creation destinations. Negative checks were assessed from retained test outcomes, not rerun against the live service."
+    },
+    {
+      "id": "AC-2",
+      "passed": true,
+      "detail": "Readonly installed-plugin list returned two Gitea issues; show fetched issue #2's description and live comment matching live-detail.json. Retained passing fixtures explicitly cover all issue pages, pull-request exclusion, and live comments. Observed outputs disclose no credentials. The live pilot has only two listed issues, so pagination and PR exclusion are fixture-validated rather than exercised at live scale."
+    },
+    {
+      "id": "AC-3",
+      "passed": true,
+      "detail": "Live issue #2 and its desktop/narrow screenshots establish creation with the reviewed title and description. The supplemental live-metadata.json records issue #3 with pilot label, aotd assignee, Gitea pilot milestone id 1, due date 2026-10-21T23:59:59Z, no warnings, and all native metadata confirmed. Thus labels, assignee, milestone and due date now have live outcome evidence, rather than only fixture coverage. Retained passing fixtures additionally cover stdin JSON creation, requested-assignee confirmation, foreign-destination rejection, and ambiguous creation without automatic retry; ambiguity was not deliberately induced live."
+    },
+    {
+      "id": "AC-4",
+      "passed": true,
+      "detail": "live-smoke.json records in-progress -> review -> done -> in-progress with pilot preserved and only the status/* label changing. The installed cached list confirms issue #1 remains in progress with pilot and status/in-progress. Retained passing fixtures explicitly cover terminal/resumed moves, native Open clearing workflow labels while retaining ordinary labels, partial-write reporting without retries, and unknown-status rejection. Native close/reopen semantics were fixture-validated; the smoke artifact records normalized statuses/categories rather than raw native state."
+    },
+    {
+      "id": "AC-5",
+      "passed": true,
+      "detail": "The released-0.3.4 upgrade receipt records seven legacy and twelve current migrations, preserved prior hashes and issue data, and successful Gitea config storage. The retained check passes the separate appended migration preserving existing main data and source identity, together with retained migration-history/data tests. This assesses recorded upgrade outcomes without reading implementation statements."
+    },
+    {
+      "id": "AC-6",
+      "passed": true,
+      "detail": "Installed-plugin status, cached list, and live show all completed successfully for proj_personal; status includes a recent sync and two items. The live smoke records workflow transitions, and the check receipt passes explicit Gitea CLI-scope/mutation-destination tests plus existing Linear, Jira, GitHub, and GitLab contracts. Configuration, refresh and mutation were not repeated during this readonly assessment."
+    },
+    {
+      "id": "AC-7",
+      "passed": true,
+      "detail": "Pre-promotion readiness only: the retained workspace check contains 845 passing tests and zero failures, including 222 Taskboard tests, successful typecheck/build, and valid Taskboard build metadata. Live Gitea smoke/detail and upgrade receipts are retained. The separately named taskboard-gitea installed plugin successfully serves the allowed readonly commands. A draft PR in aotd1/bb-plugins remains pending the subsequent Integrate operation; this assessment does not claim publication or verify a PR URL."
+    },
+    {
+      "id": "AC-UI-1",
+      "passed": true,
+      "detail": "Manage visibly offers and selects Gitea; the actual creation modal reads Personal · Gitea · New issue and shows the expected repository destination and title/description fields. The desktop board displays the pilot issue, and desktop/narrow details visibly show Gitea with readable content and controls. The narrow title wraps and metadata stacks without evident horizontal overflow. The creation modal has a visible vertical scrollbar; its lower metadata controls and a narrow creation-form view were not captured. Screenshots plus the retained successful live creation support visible pilot operability; this assessor performed no UI interactions."
+    }
+  ],
+  "overallPassed": true,
+  "assessedArtifactPaths": [
+    "/tmp/taskboard-fresh-qa-packet.json",
+    "/Users/aotd/.bb/plugins/environment-personal-workspace/host-data/workspaces/thr_v29smt7xre/bb-plugins/.empirical/specs/taskboard-gitea-tea/qa/local/workspace-check-node24.log",
+    "/Users/aotd/.bb/plugins/environment-personal-workspace/host-data/workspaces/thr_v29smt7xre/bb-plugins/.empirical/specs/taskboard-gitea-tea/qa/local/upgrade-from-0.3.4.json",
+    "/Users/aotd/.bb/plugins/environment-personal-workspace/host-data/workspaces/thr_v29smt7xre/bb-plugins/.empirical/specs/taskboard-gitea-tea/qa/local/live-detail.json",
+    "/Users/aotd/.bb/plugins/environment-personal-workspace/host-data/workspaces/thr_v29smt7xre/bb-plugins/.empirical/specs/taskboard-gitea-tea/qa/local/live-smoke.json",
+    "/Users/aotd/.bb/plugins/environment-personal-workspace/host-data/workspaces/thr_v29smt7xre/bb-plugins/.empirical/specs/taskboard-gitea-tea/qa/local/live-metadata.json",
+    "/Users/aotd/.bb/plugins/environment-personal-workspace/host-data/workspaces/thr_v29smt7xre/bb-plugins/.empirical/specs/taskboard-gitea-tea/qa/local/creation-form-desktop.jpg",
+    "/Users/aotd/.bb/plugins/environment-personal-workspace/host-data/workspaces/thr_v29smt7xre/bb-plugins/.empirical/specs/taskboard-gitea-tea/qa/local/manage-desktop.jpg",
+    "/Users/aotd/.bb/plugins/environment-personal-workspace/host-data/workspaces/thr_v29smt7xre/bb-plugins/.empirical/specs/taskboard-gitea-tea/qa/local/board-desktop.jpg",
+    "/Users/aotd/.bb/plugins/environment-personal-workspace/host-data/workspaces/thr_v29smt7xre/bb-plugins/.empirical/specs/taskboard-gitea-tea/qa/local/created-issue-desktop.jpg",
+    "/Users/aotd/.bb/plugins/environment-personal-workspace/host-data/workspaces/thr_v29smt7xre/bb-plugins/.empirical/specs/taskboard-gitea-tea/qa/local/created-issue-mobile.jpg"
+  ],
+  "summary": "All eight criteria pass at the allowed pre-promotion scope. Live receipts confirm title/description creation plus native labels, assignee, milestone and due date; pagination/PR filtering, negative guards, native close/reopen and ambiguity/no-retry behavior are fixture-validated. Screenshots establish Gitea in Manage, desktop creation and desktop/narrow details, with narrow creation-form coverage limited. Final fork draft-PR publication remains pending Integrate. No implementation source, private reasoning, prior code review, or external mutation was used.",
+  "collector": "fresh-context outcome assessor /root/gitea_outcome_qa; retained-artifact review, visual screenshot inspection, and the packet's three allowed readonly installed-plugin commands on 2026-10-14"
+}

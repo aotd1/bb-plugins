@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "id": "collected-3716c39d1a60fd554f21a0be",
+  "criteria": [
+    "AC-1",
+    "AC-2",
+    "AC-3",
+    "AC-4",
+    "AC-5",
+    "AC-6",
+    "AC-7",
+    "AC-UI-1"
+  ],
+  "evidenceKinds": [
+    "browser",
+    "screenshot"
+  ],
+  "summary": "Real installed Taskboard Gitea UI verified in BB at desktop and 390px; live tea creation, status transitions, metadata and comments and released-store upgrade retained.",
+  "passed": true,
+  "startedAt": "2026-10-14T13:07:11.663Z",
+  "completedAt": "2026-10-14T13:07:11.663Z",
+  "provenance": {
+    "repositoryId": "sha256:703b13956fbeb2dfe9d4cf7c34077de56a5c348c0f42f9ceef5c1cac794fbf42",
+    "feature": "taskboard-gitea-tea",
+    "specRevision": 2,
+    "specDigest": "sha256:c0d148ff671a7feb07983234473d572816de23c8268ac052245e682ac16c084e",
+    "treeDigest": "sha256:db00b69d10c9d64d30ab097e08cad8cbd59519d6b7d8bb392179496960d3cef3",
+    "policyDigest": "sha256:4aedcfe7f723bdfc2b5d92de7eacf6bac553de4731715c9d0f84dc58dd5754bd"
+  },
+  "digest": "sha256:bc2d2734e110ff260925cbc5518a29de4f9bd98c2d2a9e6ba7cedc5d7fe18811",
+  "kind": "collected",
+  "collector": "root:bb-browser-automation-and-live-cli",
+  "artifacts": [
+    {
+      "path": ".empirical/specs/taskboard-gitea-tea/qa/local/created-issue-mobile.jpg",
+      "mediaType": "image/jpeg",
+      "bytes": 31083,
+      "digest": "sha256:e292218e3c024e51a5242e78a50a367bf6818e501b7f50c075e0abdac9083803"
+    },
+    {
+      "path": ".empirical/specs/taskboard-gitea-tea/qa/local/live-detail.json",
+      "mediaType": "application/json",
+      "bytes": 934,
+      "digest": "sha256:87faa970088ec7f28c0bc172d75d7428cb71bc560cff0e515b745634b75f8b45"
+    },
+    {
+      "path": ".empirical/specs/taskboard-gitea-tea/qa/local/live-metadata.json",
+      "mediaType": "application/json",
+      "bytes": 325,
+      "digest": "sha256:50b5437caf1a29e704ce07691dd128b5aa220e7d7dbb2057bd390e53a4211f4d"
+    },
+    {
+      "path": ".empirical/specs/taskboard-gitea-tea/qa/local/live-smoke.json",
+      "mediaType": "application/json",
+      "bytes": 970,
+      "digest": "sha256:8f54f48504ff2f9c0c47825c889c3e4250b5dd535d4eea1080aadbacf79bc415"
+    },
+    {
+      "path": ".empirical/specs/taskboard-gitea-tea/qa/local/manage-desktop.jpg",
+      "mediaType": "image/jpeg",
+      "bytes": 49581,
+      "digest": "sha256:80155f61ea740663d7ece8535e2e53613c35da513501246cc5f247349735ef44"
+    },
+    {
+      "path": ".empirical/specs/taskboard-gitea-tea/qa/local/upgrade-from-0.3.4.json",
+      "mediaType": "application/json",
+      "bytes": 211,
+      "digest": "sha256:7da61593d54779e085de1d242fb4dc0dda40e04927c3abf0aebc7a4e3c2c5cdd"
+    }
+  ]
+}

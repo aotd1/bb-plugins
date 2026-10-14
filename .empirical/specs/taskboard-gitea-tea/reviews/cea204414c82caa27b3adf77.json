@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "packetDigest": "sha256:12e8b046db1829d2bc7505f142ce256616d96a082b80608292347c841765372f",
+  "mode": "fresh-context",
+  "baseRef": "main",
+  "baseCommit": "a16dda0dd942d0bd1a7967329142f4209d5c9231",
+  "headCommit": "6968bbceb74fb582c1682c78c4b5514d5c18dedb",
+  "diffDigest": "sha256:839b4eb84a8b35d933ae75eb904eb7cced8f9e76664c7b8aa6526d1c07f3c4b3",
+  "verdict": "APPROVED",
+  "reviewerActor": "isolated-gitea-reviewer-f1a0b568-e846-4be7-ab7e-337a411a1e07",
+  "reviewerInvocationId": "e2bc01c9-910c-4130-8389-4e7ab88cf7b2",
+  "reviewerLogin": null,
+  "body": "# Verdict: APPROVED\n\n- PASS AC-1: Explicit login and host-qualified repository are wired through configuration; adapter rejects foreign destinations and locators and checks login host before API requests.\n- PASS AC-2: Bounded pagination, pull-request filtering, live details/comments and credential-free subprocess arguments are implemented; runtime verification follows this review.\n- PASS AC-3: Creation validates live metadata, sends reviewed fields through stdin JSON, and marks uncertain POST results without retrying creation.\n- PASS AC-4: Native and existing workflow-label moves preserve ordinary labels, set terminal/open state, and verify successful results; partial failures are reported.\n- PASS AC-5: The diff appends one migration without changing existing SQL statements and copies configuration, cached issues and sync state into expanded source tables.\n- PASS AC-6: Gitea is included in source contracts, adapter selection and CLI configuration/read/transition paths, with focused regression fixtures; execution follows this review.\n- PASS AC-UI-1: Manage controls, source naming/glyphs and creation destination wiring support Gitea; desktop and narrow-panel pilot validation remains a subsequent Verify action.\n- PASS AC-7: The committed plan preserves separate pilot identity and fork-only draft publication boundaries; receipts, installation, smoke evidence and publication are subsequent workflow actions, as specified for this pre-Verify review.\n\n## Security / correctness\n\nNo material blocker found in the supplied committed diff. Authenticated transport uses explicit tea login, argv execution and stdin JSON; repository and returned issue URLs are checked. Tests and live evidence were not executed or inspected in this isolated pre-Verify review.\n\n## Design / maintainability\n\nThe adapter keeps provider behavior behind the existing source contract, adds backward-compatible configuration defaults and appends storage migrations. No material design or maintainability findings.",
+  "bodyDigest": "sha256:13c9019a430efc3181c514b23c4f12cbe01a637f60207e9dcb35a2ccd944bb82",
+  "findings": [],
+  "digest": "sha256:cea204414c82caa27b3adf77ab30ba070510ccfb442a0d2c138cba5a64110ba4"
+}
