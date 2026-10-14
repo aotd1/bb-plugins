@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "classification": "behavioral",
+  "capabilities": [
+    "taskboard-gitea"
+  ],
+  "surfaces": [
+    "workflow"
+  ],
+  "regressionRationale": null,
+  "digest": "sha256:11709b86cb3cc910af4e1139991fa10b81a5c94649cf94daa638d77940d0f078"
+}

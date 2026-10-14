@@ -163,7 +163,8 @@ const SOURCE_FILTER_OPTIONS = [
   'linear',
   'github',
   'jira',
-  'gitlab'
+  'gitlab',
+  'gitea'
 ] as const;
 const RIGHT_PANEL_PINNED_STORAGE_KEY = 'bb-taskboard:right-panel-pinned';
 const RIGHT_PANEL_PIN_EVENT = 'bb-taskboard:right-panel-pin-changed';
@@ -388,7 +389,8 @@ function isWorkSource(value: string): value is WorkSource {
     value === 'linear' ||
     value === 'github' ||
     value === 'jira' ||
-    value === 'gitlab'
+    value === 'gitlab' ||
+    value === 'gitea'
   );
 }
 
@@ -396,6 +398,7 @@ function sourceName(source: WorkSource): string {
   if (source === 'github') return 'GitHub';
   if (source === 'jira') return 'Jira';
   if (source === 'gitlab') return 'GitLab';
+  if (source === 'gitea') return 'Gitea';
   return 'Linear';
 }
 
@@ -406,10 +409,14 @@ const TRACKER_OPTIONS: ReadonlyArray<{
   { source: 'github', description: 'Repository issues' },
   { source: 'linear', description: 'Team issues' },
   { source: 'jira', description: 'JQL-filtered issues' },
-  { source: 'gitlab', description: 'GitLab project issues' }
+  { source: 'gitlab', description: 'GitLab project issues' },
+  { source: 'gitea', description: 'Self-hosted Gitea repository issues' }
 ];
 
 function SourceGlyph({ source }: { source: WorkSource }) {
+  if (source === 'gitea') {
+    return <Icon name="Ticket" className="size-3.5" aria-hidden="true" />;
+  }
   if (source === 'github') {
     return <Icon name="Github" className="size-3.5" aria-hidden="true" />;
   }
@@ -5306,7 +5313,9 @@ function configFingerprint(config: ProjectConfigView): string {
     jiraBaseUrl: config.jiraBaseUrl,
     jiraEmail: config.jiraEmail,
     jiraJql: config.jiraJql,
-    gitlabProjectRef: config.gitlabProjectRef
+    gitlabProjectRef: config.gitlabProjectRef,
+    giteaLogin: config.giteaLogin,
+    giteaProjectRef: config.giteaProjectRef
   });
 }
 
@@ -5466,6 +5475,10 @@ function ProjectConfigForm({
       );
       return;
     }
+    if (config.source === 'gitea' && (!config.giteaLogin.trim() || !config.giteaProjectRef.trim())) {
+      setError('Add a tea login and Gitea repository (host/owner/repo).');
+      return;
+    }
     if (config.source === 'gitlab') {
       const ref = config.gitlabProjectRef.trim();
       const validRef =
@@ -5500,6 +5513,8 @@ function ProjectConfigForm({
         jiraEmail: config.jiraEmail.trim(),
         jiraJql: config.jiraJql.trim(),
         gitlabProjectRef: config.gitlabProjectRef.trim(),
+        giteaLogin: config.giteaLogin.trim(),
+        giteaProjectRef: config.giteaProjectRef.trim(),
         linearCredential,
         jiraCredential
       });
@@ -5912,6 +5927,34 @@ function ProjectConfigForm({
                   setSaved(false);
                 }}
               />
+            </label>
+          </div>
+        </section>
+      ) : null}
+
+      {config.source === 'gitea' ? (
+        <section className={cardClass} aria-labelledby="gitea-connector-title">
+          <h3 id="gitea-connector-title" className="text-sm font-semibold">
+            <span className="mr-2 inline-flex items-center"><SourceGlyph source="gitea" /></span>
+            Gitea
+          </h3>
+          <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+            Connect your Gitea server with an existing tea login. Workflow columns
+            use repository <code>status/&lt;name&gt;</code> labels. Done and canceled
+            stages close issues; moving back into work reopens them.
+          </p>
+          <div className="mt-4 grid gap-3 @lg:grid-cols-2">
+            <label className="space-y-1.5 text-xs font-medium">
+              tea login
+              <Input aria-label="Gitea tea login" value={config.giteaLogin}
+                placeholder="my-gitea" className="tb-field" disabled={saving}
+                onChange={event => { setConfig({ ...config, giteaLogin: event.target.value }); setSaved(false); }} />
+            </label>
+            <label className="space-y-1.5 text-xs font-medium">
+              Gitea repository (host/owner/repo)
+              <Input aria-label="Gitea repository" value={config.giteaProjectRef}
+                placeholder="git.example.com/team/app" className="tb-field tb-field-mono" disabled={saving}
+                onChange={event => { setConfig({ ...config, giteaProjectRef: event.target.value }); setSaved(false); }} />
             </label>
           </div>
         </section>
