@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "sequence": 2,
+  "previousDigest": "sha256:17a92d9faf4273b14de7b4ce026255377d19a5e880a574dac54f665bdc2d4336",
+  "actor": "agent",
+  "type": "transition",
+  "summary": "Specified the agreed Gitea source scope, isolation, acceptance criteria and seven-day upstream publication boundary.",
+  "createdAt": "2026-10-14T12:28:24.002Z",
+  "stateBeforeDigest": "sha256:35e8380834157f5ca0dc95d0eec2199dc01d85615ce69cac2aab8c9e6670c3b6",
+  "stateAfterDigest": "sha256:eedfcce85539350b478646ffd2cdf3520a50ff13528c29dff3bd876b490ccc9e",
+  "state": {
+    "schemaVersion": 5,
+    "revision": 2,
+    "activeFeature": "taskboard-gitea-tea",
+    "request": "Add a Gitea tracker to Taskboard through the installed tea CLI. Support explicitly scoped tea login and owner/repo, list and live issue/comment details, issue creation with labels assignees milestones due date when available, native open/closed and status/* label Kanban transitions, CLI and UI configuration, append-only database upgrades, meaningful tests and live verification. Work in this fresh isolated checkout and user-authorized feat/taskboard-gitea-tea branch. Create a draft PR only in our GitHub fork aotd1/bb-plugins and install a separate local pilot plugin identity. Do not create upstream issues or PRs until seven days of actual pilot use have elapsed.",
+    "profile": "complex",
+    "workflow": "complex",
+    "mode": "normal",
+    "phase": "design",
+    "status": "waiting",
+    "repairAttempts": 0,
+    "message": "Specified the agreed Gitea source scope, isolation, acceptance criteria and seven-day upstream publication boundary.",
+    "implementationActor": null,
+    "workStartedAt": null,
+    "specDigest": "sha256:c0d148ff671a7feb07983234473d572816de23c8268ac052245e682ac16c084e",
+    "approvedSpecRevision": 2,
+    "capabilityArchiveRequired": true,
+    "capabilityDeltaDigest": "sha256:0348161b15d8ad86c3b0b9226d62faf8e78498bff2ad8d14b3589d04ae16b133",
+    "impactDigest": "sha256:11709b86cb3cc910af4e1139991fa10b81a5c94649cf94daa638d77940d0f078",
+    "capabilityClaimId": "taskboard-gitea-tea-8aca76f11e54",
+    "authorizationDigest": null,
+    "evidence": [],
+    "evidenceReceiptIds": [],
+    "legacyEvidenceCount": 0,
+    "completion": {
+      "implemented": false,
+      "verified": false,
+      "integrated": false,
+      "delivered": false,
+      "published": false,
+      "highest": "none",
+      "reasons": {
+        "implemented": "implemented has not been proven by a durable receipt.",
+        "verified": "verified has not been proven by a durable receipt.",
+        "integrated": "integrated has not been proven by a durable receipt.",
+        "delivered": "delivered has not been proven by a durable receipt.",
+        "published": "published has not been proven by a durable receipt."
+      }
+    },
+    "updatedAt": "2026-10-14T12:28:24.002Z",
+    "reviewFirst": true,
+    "capabilityBase": {
+      "schemaVersion": 1,
+      "id": "taskboard-gitea-tea-8aca76f11e54",
+      "repositoryId": "sha256:703b13956fbeb2dfe9d4cf7c34077de56a5c348c0f42f9ceef5c1cac794fbf42",
+      "feature": "taskboard-gitea-tea",
+      "worktree": "/Users/aotd/.bb/plugins/environment-personal-workspace/host-data/workspaces/thr_v29smt7xre/bb-plugins",
+      "worktreeId": "sha256:20bab37823a9540d5cb1a7b090c3be591a7a54a1c14512f959c17141477e4105",
+      "baseCommit": "a16dda0dd942d0bd1a7967329142f4209d5c9231",
+      "baseTree": "01b1f7e779c95b4cd206e9d1e0d09c48bf91a406",
+      "bases": {
+        "taskboard-gitea": {
+          "capability": "taskboard-gitea",
+          "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "requirements": {
+            "gitea through tea": null,
+            "gitea issue writes": null,
+            "additive storage and pilot boundary": null
+          }
+        }
+      },
+      "capabilities": [
+        "taskboard-gitea"
+      ],
+      "status": "active",
+      "integrationReceiptDigest": null,
+      "createdAt": "2026-10-14T12:28:23.997Z",
+      "heartbeatAt": "2026-10-14T12:28:23.997Z",
+      "digest": "sha256:ed2b50210da0e1a3b3f50b60dc547649332160d34ca5f5224554c4b5a9cb0546"
+    }
+  },
+  "digest": "sha256:ad6cfe604adc82ce778d92a370c21c82d2e4d0180f17c082d32ec0c2ad104bd6"
+}

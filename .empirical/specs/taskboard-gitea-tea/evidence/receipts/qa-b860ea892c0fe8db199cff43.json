@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "id": "qa-b860ea892c0fe8db199cff43",
+  "criteria": [
+    "AC-1",
+    "AC-2",
+    "AC-3",
+    "AC-4",
+    "AC-5",
+    "AC-6",
+    "AC-7",
+    "AC-UI-1"
+  ],
+  "evidenceKinds": [
+    "human"
+  ],
+  "summary": "All eight criteria pass at the allowed pre-promotion scope. Live receipts confirm title/description creation plus native labels, assignee, milestone and due date; pagination/PR filtering, negative guards, native close/reopen and ambiguity/no-retry behavior are fixture-validated. Screenshots establish Gitea in Manage, desktop creation and desktop/narrow details, with narrow creation-form coverage limited. Final fork draft-PR publication remains pending Integrate. No implementation source, private reasoning, prior code review, or external mutation was used.",
+  "passed": true,
+  "startedAt": "2026-10-14T13:11:35.351Z",
+  "completedAt": "2026-10-14T13:11:35.351Z",
+  "provenance": {
+    "repositoryId": "sha256:703b13956fbeb2dfe9d4cf7c34077de56a5c348c0f42f9ceef5c1cac794fbf42",
+    "feature": "taskboard-gitea-tea",
+    "specRevision": 2,
+    "specDigest": "sha256:c0d148ff671a7feb07983234473d572816de23c8268ac052245e682ac16c084e",
+    "treeDigest": "sha256:db00b69d10c9d64d30ab097e08cad8cbd59519d6b7d8bb392179496960d3cef3",
+    "policyDigest": "sha256:4aedcfe7f723bdfc2b5d92de7eacf6bac553de4731715c9d0f84dc58dd5754bd",
+    "workflowRevision": 7,
+    "gitCommit": "6968bbceb74fb582c1682c78c4b5514d5c18dedb",
+    "scope": [
+      "plugins/taskboard"
+    ],
+    "scopeDigest": "sha256:d6b698ce8db2800ebf091baf9277df287ddf472b874f0954ddccfe114630c313",
+    "textTreeDigest": "sha256:db00b69d10c9d64d30ab097e08cad8cbd59519d6b7d8bb392179496960d3cef3"
+  },
+  "digest": "sha256:c23fd39ad1708a0ea2269ce9ac2831550f75420883592cd67ac548df84f8fc9c",
+  "kind": "qa",
+  "matrixDigest": "sha256:c7972fd27a3eae2b2ec3d915c8bcbca3c62d5b52cd1deafcef2070cb8b8e1511",
+  "check": {
+    "id": "qa-fresh-context",
+    "kind": "fresh-context"
+  },
+  "coveredChecks": [
+    "fresh-context"
+  ],
+  "platform": {
+    "os": "darwin",
+    "arch": "arm64",
+    "node": "26.10.0",
+    "bun": null
+  },
+  "attempts": [
+    {
+      "number": 1,
+      "outcome": "passed",
+      "summary": "All eight criteria pass at the allowed pre-promotion scope. Live receipts confirm title/description creation plus native labels, assignee, milestone and due date; pagination/PR filtering, negative guards, native close/reopen and ambiguity/no-retry behavior are fixture-validated. Screenshots establish Gitea in Manage, desktop creation and desktop/narrow details, with narrow creation-form coverage limited. Final fork draft-PR publication remains pending Integrate. No implementation source, private reasoning, prior code review, or external mutation was used.",
+      "startedAt": "2026-10-14T13:11:35.351Z",
+      "completedAt": "2026-10-14T13:11:35.351Z",
+      "durationMs": 0,
+      "collector": "fresh-context outcome assessor /root/gitea_outcome_qa; retained-artifact review, visual screenshot inspection, and the packet's three allowed readonly installed-plugin commands on 2026-10-14",
+      "command": null,
+      "result": null,
+      "cleanStart": true,
+      "sourceTreeBefore": "sha256:db00b69d10c9d64d30ab097e08cad8cbd59519d6b7d8bb392179496960d3cef3",
+      "sourceTreeAfter": "sha256:db00b69d10c9d64d30ab097e08cad8cbd59519d6b7d8bb392179496960d3cef3",
+      "artifacts": [
+        {
+          "path": ".empirical/specs/taskboard-gitea-tea/qa/fresh-context-outcome.json",
+          "mediaType": "application/json",
+          "bytes": 7356,
+          "digest": "sha256:62da43ace89d6a64d4248459a59b138050bdddedb4a2d51593c7572097883f7f"
+        },
+        {
+          "path": ".empirical/specs/taskboard-gitea-tea/qa/local/created-issue-mobile.jpg",
+          "mediaType": "image/jpeg",
+          "bytes": 31083,
+          "digest": "sha256:e292218e3c024e51a5242e78a50a367bf6818e501b7f50c075e0abdac9083803"
+        },
+        {
+          "path": ".empirical/specs/taskboard-gitea-tea/qa/local/creation-form-desktop.jpg",
+          "mediaType": "image/jpeg",
+          "bytes": 48295,
+          "digest": "sha256:5dabd7af8de4162833e9570103ab9bcb971152c11393897b0cb906fa748946e1"
+        }
+      ]
+    }
+  ],
+  "anomalies": []
+}
